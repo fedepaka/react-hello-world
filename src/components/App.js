@@ -11,10 +11,12 @@ class App extends Component {
       <div className="App">
         <Header title="Paka Project" items={items}/>
         <Content />
-        <Footer copyright="&copy Codejobs 2018"/>
+        {/*<Footer copyright="&copy Codejobs 2018"/>*/}
+        <Footer/>
       </div>
     );
   }
 }
 
 export default App;
+

@@ -8,11 +8,12 @@ class Footer extends Component {
     };
 
     render() {
-        const { copyright } = this.props;
+        const { copyright = '&copy; React paka 2018' } = this.props;
         return (
             <div className="Footer">
-                <h2>{copyright}</h2>
+                {/*<h2>{copyright}</h2>*/}
 
+                <p dangerouslySetInnerHTML={{ __html: copyright}}></p>
             </div>
         );
     }
