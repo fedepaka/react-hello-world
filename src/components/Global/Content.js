@@ -10,6 +10,7 @@ class Content extends Component {
             counter: 0,
             resultSum: 0,
             inputNumber1: 0,
+
             inputNumber2: 0
         };
         this.handleEventClick = this.handleEventClick.bind(this);
