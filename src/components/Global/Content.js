@@ -10,13 +10,15 @@ class Content extends Component {
             counter: 0,
             resultSum: 0,
             inputNumber1: 0,
-
             inputNumber2: 0
         };
+        //declaración de los eventos
         this.handleEventClick = this.handleEventClick.bind(this);
-        this. = this.handleEventClick.bind(this);
+        this.handleSumaClick= this.handleSumaClick.bind(this);
+        this.inputChange = this.inputChange.bind(this);
     };
 
+    //definición de manejadores de eventos
     handleEventClick(e){
         if (e.target.id === 'add'){
             this.setState({
@@ -33,6 +35,24 @@ class Content extends Component {
             });
         }
     };
+    handleSumaClick(e){
+        if(e && e.target.id === 'btnSumar'){
+            this.setState({
+                resultSum: this.state.inputNumber1 + this.state.inputNumber2
+            });
+        }
+    };
+    inputChange(e){
+        if(e && e.target.id === 'inputNumber1'){
+            this.setState({
+                inputNumber1: Number(e.target.value)
+            });
+        }else{
+            this.setState({
+                inputNumber2: Number(e.target.value)
+            });
+        }
+    };
 
     //se ejecuta cuando termina de ejecutar el render(), causando la llamada nuevamente a render()
     componentDidMount(){
@@ -42,20 +62,20 @@ class Content extends Component {
     }
 
     render() {
-
-        console.log("hola");
         return (
             <div className="Content">
                     <h1>Soy el content</h1>
 <p>
                 <button id="add" onClick={this.handleEventClick}>+</button>
                 <button id="substract" onClick={this.handleEventClick}>-</button>
-                <button id="reset" onClick={this.handleEventClick} >[-]</button>
+                <button id="reset" onClick={this.handleEventClick} >RESET</button>
                 <label><b>{this.state.counter} </b></label>
 </p>
                 <p>
-                    <input id="number1" type="number" value={this.state.inputNumber1} onchange={this.inputChange} />
-                    <input id="number2" type="number" value={this.state.inputNumber2} onchange={this.inputChange}/>
+                    <input id="inputNumber1" type="number" value={this.state.inputNumber1} onChange={this.inputChange} />
+                    <input id="inputNumber2" type="number" value={this.state.inputNumber2} onChange={this.inputChange}/>
+                    <button id="btnSumar" onClick={this.handleSumaClick} >Sumar</button>
+                    <label><b>{this.state.resultSum} </b></label>
                 </p>
 
             </div>
