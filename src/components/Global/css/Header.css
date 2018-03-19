@@ -37,3 +37,11 @@
   display: inline-block;
   padding-right: 10px;
 }
+
+.Menu li a {
+  color: #ccc;
+}
+
+.Menu li a:hover {
+  color: #eee;
+}

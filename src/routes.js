@@ -1,22 +1,24 @@
-//dependencias
+// Dependencies
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
-//componentes
+// Components
 import App from './components/App';
 import About from './components/About';
 import Contact from './components/Contact';
-import Home from './components/Home';
 import Page404 from './components/Page404';
+
+// Container
+import Home from './components/Home';
 
 const AppRoutes = () =>
     <App>
         <Switch>
-            <Route path="/" conponent={Home} />
-            <Route path="/About" conponent={About} />
-            <Route path="/Contact" conponent={Contact} />
-            <Route conponent={Page404} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/" component={Home} />
+            <Route component={Page404} />
         </Switch>
-    </App>
+    </App>;
 
 export default AppRoutes;
