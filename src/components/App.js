@@ -1,5 +1,7 @@
 //dependencias
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 //componentes o controles
 import Header from './Global/Header';
 import Content from './Global/Content';
